@@ -120,6 +120,6 @@ while(leaveLoop == False):
   
   winner = checkForWinner(gameBoard)
   if(winner != "N"):
-    print("\nGame over! Thank you for playing :)")
+    print("\n You are Winner ! Thank you for playing :)")
     break
   
