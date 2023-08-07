@@ -101,25 +101,39 @@ while(leaveLoop == False):
   if(turnCounter % 2 == 0):
     printGameBoard()
     numberPicked = int(input("\nChoose a number [1-9]: "))
-    if(numberPicked >= 1 or numberPicked <= 9):
+    # if(numberPicked >= 1 or numberPicked <= 9):
+    if numberPicked in possibleNumbers:
       modifyArray(numberPicked, 'X')
       possibleNumbers.remove(numberPicked)
     else:
-      print("Invalid input. Please try again.")
+      print("The number is chosen ,choose another number please !")
     turnCounter += 1
-  ### It's the computer's turn
+### It's the second player's turn
   else:
     while(True):
-      cpuChoice = random.choice(possibleNumbers)
-      print("\nCpu choice: ", cpuChoice)
-      if(cpuChoice in possibleNumbers):
-        modifyArray(cpuChoice, 'O')
-        possibleNumbers.remove(cpuChoice)
+      printGameBoard()
+      num=int(input("\nChoose a number [1-9]: "))
+      print("\n Electro Player2: ", num)
+      if(num in possibleNumbers):
+        modifyArray(num, 'O')
+        possibleNumbers.remove(num)
+      else:
+        print("The number is chosen ,choose another number please !")  
         turnCounter += 1
-        break
+      break
   
   winner = checkForWinner(gameBoard)
-  if(winner != "N"):
-    print("\n You are Winner ! Thank you for playing :)")
-    break
+
+  if winner == 'X':
+      printGameBoard()
+      print("\nCongratulations! You are the winner!")
+      break
+  elif winner == 'O':
+      printGameBoard()
+      print("\nSorry, Electro second player has won. Better luck next time!")
+      break
+  elif not possibleNumbers:
+      printGameBoard()
+      print("\nIt's a tie! Thanks for playing!")
+      break
   
