@@ -120,7 +120,7 @@ while(leaveLoop == False):
       else:
         print("The number is chosen ,choose another number please !")  
         turnCounter += 1
-      break
+        break
   
   winner = checkForWinner(gameBoard)
 
