@@ -106,7 +106,7 @@ while(leaveLoop == False):
       modifyArray(numberPicked, 'X')
       possibleNumbers.remove(numberPicked)
     else:
-      print("The number is chosen ,choose another number please !")
+      print("The number was chosen ,choose another number please !")
     turnCounter += 1
 ### It's the second player's turn
   else:
@@ -118,7 +118,7 @@ while(leaveLoop == False):
         modifyArray(num, 'O')
         possibleNumbers.remove(num)
       else:
-        print("The number is chosen ,choose another number please !")  
+        print("The number was chosen ,choose another number please !")  
         turnCounter += 1
         break
   
@@ -130,7 +130,7 @@ while(leaveLoop == False):
       break
   elif winner == 'O':
       printGameBoard()
-      print("\nSorry, Electro second player has won. Better luck next time!")
+      print("\nSorry, Electro the second player has won. Better luck next time!")
       break
   elif not possibleNumbers:
       printGameBoard()
